@@ -1,4 +1,4 @@
-# Apache Virtualgost creator
+# PHP Apache Virtualgost creator
 
 ![Logo](http://i.imgur.com/dzfZcU7.png?1)
 
@@ -7,7 +7,8 @@ by Jose Luis Chafardet Grimaldi
 A simple php script to create apache virtualhosts based in symfony 3 console component.
 
 ```
-Please note this is not meant for production environments! I wrote it for development purposes (to speed up the process of configuring apache).
+Please note this is not meant for production environments! 
+I wrote it for development purposes (to speed up the process of configuring apache).
 ```
 
 ## ToDo
