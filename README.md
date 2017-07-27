@@ -1,4 +1,4 @@
-# PHP Apache Virtualgost creator
+# PHP Apache Virtualhost creator
 
 ![Logo](http://i.imgur.com/dzfZcU7.png?1)
 
