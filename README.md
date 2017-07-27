@@ -25,4 +25,9 @@ The script receives 2 parameters, one is mandatory **domain**, and the second is
 
 bin/.virtualhost create domain folder
 
+***
+
+* Send questions through the issues tracker.
+* suggestions through pull requests (please describe the suggestion accurately and briefly.)
+
 
