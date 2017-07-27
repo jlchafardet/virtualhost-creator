@@ -13,13 +13,15 @@ I wrote it for development purposes (to speed up the process of configuring apac
 
 ## ToDo
 - [x] Create working console code
+- [ ] Add configuration file (for distro specific information)
 - [ ] Add virtualhost template
-- [ ] Export .conf file with the parameters given by the user
-- [ ] Enable site (a2ensite) with apache (ubuntu)
+- [ ] Parse virtualhost template and replace the variables with the input
+- [ ] Export .conf file with the parameters given by the user to the proper directory
+- [ ] Enable site (a2ensite) with apache if needed(ubuntu)
 - [ ] Restart apache
-- [ ] Report to the user the outcome of the process
+- [ ] Print to the screen the outcome of the process
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
-- [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
 
 ## Usage
 
