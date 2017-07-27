@@ -7,7 +7,7 @@ jose.chafardet@icloud.com
 A simple php script to create apache virtualhosts based on symfony 3 console component.
 
 ```
-Please note this is not meant for production environments! 
+Please be aware that this script is not meant for production environments! 
 I wrote it for development purposes (to speed up the process of configuring apache).
 ```
 First version state:
