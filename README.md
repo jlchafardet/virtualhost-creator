@@ -28,7 +28,13 @@ I wrote it for development purposes (to speed up the process of configuring apac
 
 The script receives 2 parameters, one is mandatory **domain**, and the second is optional _**folder**_
 
-bin/.virtualhost create domain folder
+bin/virtualhost create domain folder
+sample output:  
+()[]
+
+If no second parameter is given, it will use the domain for the folder name.
+sample output:  
+()[]
 
 ***
 
