@@ -40,5 +40,8 @@
 # Vendors
 /vendor/
 
+# -tmp files
+*-tmp*
+
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

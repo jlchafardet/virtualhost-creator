@@ -7,10 +7,10 @@ use Symfony\Component\Console\Application as BaseApplication;
 use jlchafardet\Console\Command\BatchProcessCommand;
 
 
-class Appliction extends BaseApplication
+class App extends BaseApplication
 {
 	const NAME = 'Virtualhost Creator';
-	const VERSION = '1.0';
+	const VERSION = '1.1';
 
 	public function __construct()
 	{
