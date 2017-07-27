@@ -43,5 +43,9 @@
 # -tmp files
 *-tmp*
 
+# PHPStorm files
+/.idea/*
+.idea/*
+./idea/*
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

@@ -4,11 +4,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php'; 
 
-const NAME = 'Virtualhost Creator';
-const VERSION = '1.0';
-
-
-use Symfony\Component\Console\Application; 
+use Symfony\Component\Console\Application;
 
 $app = new Application('Virtualhost Creator', '1.0');
 $app->run();
