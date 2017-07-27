@@ -15,7 +15,7 @@ A simple php script to create apache virtual hosts based in symfony 3 console co
 
 ## Usage
 
-The script receives 2 parameters, one is mandatory **domain**, and the second is optional _folder_
+The script receives 2 parameters, one is mandatory **domain**, and the second is optional _**folder**_
 
 bin/.virtualhost create domain folder
 
