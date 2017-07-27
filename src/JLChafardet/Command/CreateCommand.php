@@ -11,7 +11,7 @@ class CreateCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('Virtualhost Creator')
+            ->setName('create')
             ->setDescription('Create virtualhost files for apache.')
             ;
     }
