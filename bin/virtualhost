@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php 
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use JLChafardet\Command;
+
+$command = new Command\CreateCommand();
+$app = new Application('Virtualhost Creator', '1.0');
+$app->add($command);
+$app->run();
