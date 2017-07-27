@@ -15,11 +15,12 @@ First version state:
 
 ## ToDo
 - [x] Create working console code
+- [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
 - [ ] Add configuration file (for distro specific information)
-- [ ] Configuration prioritization counter logic
+- [ ] Add configuration prioritization counter logic (in which order the virtualhosts will be loaded by apache)
 - [ ] Add virtualhost template
 - [ ] Parse virtualhost template and replace the variables with the input
-- [ ] Export .conf file with the parameters given by the user to the proper directory
+- [ ] Save apache **.conf** file with the parameters given by the user to the proper directory
 - [ ] Enable site (a2ensite) with apache if needed(ubuntu)
 - [ ] Restart apache
 - [ ] Print to the screen the outcome of the process
