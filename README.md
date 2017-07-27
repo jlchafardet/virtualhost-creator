@@ -10,6 +10,8 @@ A simple php script to create apache virtualhosts based on symfony 3 console com
 Please note this is not meant for production environments! 
 I wrote it for development purposes (to speed up the process of configuring apache).
 ```
+First version state:
+![First version of the app](http://i.imgur.com/kl64TxB.png)
 
 ## ToDo
 - [x] Create working console code
