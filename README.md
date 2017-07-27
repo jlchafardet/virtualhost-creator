@@ -18,6 +18,8 @@ I wrote it for development purposes (to speed up the process of configuring apac
 - [ ] Enable site (a2ensite) with apache (ubuntu)
 - [ ] Restart apache
 - [ ] Report to the user the outcome of the process
+- [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
+- [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
 ## Usage
 
