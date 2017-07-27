@@ -23,10 +23,16 @@ class CreateCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /**
+         * Lets read the configuration file
+         */
+        require_once dirname(__DIR__) . "/../../conf/config.inc.php";
+
+        /**
          * get the input from the user.
          */
         $inputDomain = trim(strtolower($input->getArgument('domain')));
         $inputFolder = trim(strtolower($input->getArgument('folder')));
+
         /**
          * if the folder value is left empty, uses the domain as name for the folder.
          */
@@ -34,6 +40,7 @@ class CreateCommand extends Command
         {
             $inputFolder = $inputDomain;
         }
+
         /**
          * Styles used by the output.
          */
@@ -42,10 +49,18 @@ class CreateCommand extends Command
 
         $output->getFormatter()->setStyle('domain', $domain);
         $output->getFormatter()->setStyle('folder', $folder);
+
+        $template = $this->getTemplate();
+
         /**
          * Sends the message to the console.
          */
-        $output->writeln("Creating Virtualhost. \nDomain is <domain>$inputDomain</domain>\nIn folder: /var/www/<folder>$inputFolder</folder>");
+        $output->writeln("\nCreating Virtualhost. \nDomain is <domain>$inputDomain</domain>\nIn folder: /var/www/<folder>$inputFolder</folder>\n$ipAddress");
+    }
+
+    protected function getTemplate()
+    {
+        return file_get_contents(dirname(__DIR__) . '/../../conf/template.conf');
     }
 
 }
