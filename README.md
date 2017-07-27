@@ -14,6 +14,7 @@ I wrote it for development purposes (to speed up the process of configuring apac
 ## ToDo
 - [x] Create working console code
 - [ ] Add configuration file (for distro specific information)
+- [ ] Configuration prioritization counter logic
 - [ ] Add virtualhost template
 - [ ] Parse virtualhost template and replace the variables with the input
 - [ ] Export .conf file with the parameters given by the user to the proper directory
