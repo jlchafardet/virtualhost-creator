@@ -7,7 +7,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CreateVirtualHost extends Command
+class CreateCommand extends Command
 {
     protected function configure()
     {
@@ -19,7 +19,7 @@ class CreateVirtualHost extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('testing ');
+        $output->writeln('Creating Virtualhost. ');
     }
 
 }
