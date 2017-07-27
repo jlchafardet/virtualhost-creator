@@ -4,7 +4,7 @@
 by Jose Luis Chafardet Grimaldi  
 jose.chafardet@icloud.com
 ***
-A simple php script to create apache virtualhosts based in symfony 3 console component.
+A simple php script to create apache virtualhosts based on symfony 3 console component.
 
 ```
 Please note this is not meant for production environments! 
