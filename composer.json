@@ -4,7 +4,7 @@
     "license": "MIT",
     "authors": [
     	{
-    		"name": "Jose Luis Chafardet",
+    		"name": "Jose Luis Chafardet Grimaldi",
     		"email": "jose.chafardet@icloud.com"
     	}
     ],
@@ -14,10 +14,7 @@
     },
     "autoload" : {
         "psr-0" : {
-            "jlchafardet\\" : "src/jlchafardet"
+            "JLChafardet\\" : "src/JLChafardet"
         }
-    },
-    "bin": [
-    	"virtualhost-creator"
-    ]
+    }
 }

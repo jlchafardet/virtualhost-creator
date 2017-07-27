@@ -4,7 +4,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php'; 
 
+use JLChafardet\VirtualhostCreator;
 use Symfony\Component\Console\Application;
 
 $app = new Application('Virtualhost Creator', '1.0');
+$app->add(new VirtualhostCreator\CreateVirtualHost());
 $app->run();
