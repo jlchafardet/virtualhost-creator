@@ -1,6 +1,6 @@
 # Apache Virtual Host creator
 
-![JL Logo](https://avatars2.githubusercontent.com/u/1892172?v=4&s=460)
+![JL Logo](https://www.facebook.com/photo.php?fbid=10152770021818795&l=97b252d16e)
 ##### by Jose Luis Chafardet Grimaldi
 
 A simple php script to create apache virtual hosts based in symfony 3 console component.
