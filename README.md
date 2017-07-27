@@ -1,7 +1,6 @@
 # PHP Apache Virtualhost creator
 
-![Logo](http://i.imgur.com/dzfZcU7.png?1)
-
+![Logo](http://i.imgur.com/dzfZcU7.png?1)  
 by Jose Luis Chafardet Grimaldi
 ***
 A simple php script to create apache virtualhosts based in symfony 3 console component.
