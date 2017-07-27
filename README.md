@@ -30,11 +30,11 @@ The script receives 2 parameters, one is mandatory **domain**, and the second is
 
 bin/virtualhost create domain folder
 sample output:  
-[With two parameters](http://i.imgur.com/X04pHTv.png)
+![With two parameters](http://i.imgur.com/X04pHTv.png)
 
 If no second parameter is given, it will use the domain for the folder name.
 sample output:  
-[Without second parameter](http://i.imgur.com/vXt9hrr.png)
+![Without second parameter](http://i.imgur.com/vXt9hrr.png)
 
 ***
 
