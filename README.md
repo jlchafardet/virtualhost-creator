@@ -17,7 +17,7 @@ First version state:
 - [x] Create working console code
 - [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
 - [ ] Add configuration file (for distro specific information)
-- [ ] Add configuration prioritization counter logic (in which order the virtualhosts will be loaded by apache)
+- [ ] Add configuration loading prioritization counter logic (in which order the virtualhosts will be loaded by apache)
 - [ ] Add virtualhost template
 - [ ] Parse virtualhost template and replace the variables with the input
 - [ ] Save apache **.conf** file with the parameters given by the user to the proper directory
@@ -26,6 +26,13 @@ First version state:
 - [ ] Print to the screen the outcome of the process
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
 - [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
+
+```
+Please note that the configuration loading prioritization will be
+automatic, there will be no "manual" prioritization.
+  
+At least is not in the plans for any of the inmediate future versions.
+```
 
 ## Usage
 
