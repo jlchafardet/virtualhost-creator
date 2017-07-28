@@ -119,7 +119,7 @@ class CreateCommand extends Command
             $documentRoot,
             $inputFolder
         );
-        $output->writeln(str_replace($needle, $haystack, $this->getTemplate()));
+        $output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
 
     }
 
@@ -131,31 +131,6 @@ class CreateCommand extends Command
     protected function getCredits()
     {
         return ("<info>Thank you for using virtualhost-creator by <folder>JLChafardet.</></>");
-    }
-
-    protected function parseTemplate()
-    {
-        /**
-         * Lets read the configuration file
-         */
-        require dirname(__DIR__) . "/../../conf/config.inc.php";
-        $needle = array(
-            '{IPADDRESS}',
-            '{PORT}',
-            '{DOMAIN}',
-            '{ALIAS}',
-            '{DOCUMENTROOT}',
-            '{FOLDER}'
-        );
-        $haystack = array (
-            $ipAddress,
-            $port,
-            $inputDomain,
-            $alias,
-            $documentRoot,
-            $inputFolder
-        );
-        return str_replace($needle, $haystack, $this->getTemplate());
     }
 
     /**
