@@ -9,7 +9,7 @@ A simple [PHP](http://php.net/) script to create [Apache](http://httpd.apache.or
 ```
 Please be aware that this script is not meant for production environments! 
 I wrote it for development purposes.
-(to speed up the process of configuring [Apache](http://httpd.apache.org/).
+(to speed up the process of configuring Apache.
 ```
 First version state:
 ![First version of the app](http://i.imgur.com/kl64TxB.png)
@@ -17,7 +17,7 @@ First version state:
 ## ToDo
 - [x] ~~Create working console code~~
 - [x] ~~Changed display output for the results.~~
-- [ ] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
+
 - [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
 - [x] ~~Add configuration file (for distro specific information)~~
 - [ ] Add counter to prioritize [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) loading (in which order the [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s will be loaded by [Apache](http://httpd.apache.org/))
@@ -25,6 +25,7 @@ First version state:
 - [x] ~~Parse [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template and replace the variables with the input~~
 - [ ] Save [Apache](http://httpd.apache.org/) **.conf** file with the parameters given by the user to the proper directory
 - [ ] Enable site with [a2ensite](http://manpages.ubuntu.com/manpages/trusty/man8/a2ensite.8.html) with [Apache](http://httpd.apache.org/) if needed([Ubuntu](https://www.ubuntu.com/))
+- [ ] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
 - [ ] Restart [Apache](http://httpd.apache.org/)/nginx
 - [x] ~~Print to the screen the outcome of the process~~
 - [ ] Add variable in the configuration file to switch between Argument and Question based execution of the script.
