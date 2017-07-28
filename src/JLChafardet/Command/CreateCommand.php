@@ -57,14 +57,17 @@ class CreateCommand extends Command
          *
          */
         $haystack = array (
-            $ipAddress,
-            $port,
-            $inputHostname,
-            $alias,
-            $documentRoot,
-            $inputFolder
+            'IP' => $ipAddress,
+            'PORT' => $port,
+            'HOSTNAME' => $inputHostname,
+            'ALIAS' => $alias,
+            'DOCUMENTROOT' => $documentRoot,
+            'FOLDER' => $inputFolder,
+            'SERVER' => $webServer,
+            'FCGIPORT' => $fcgiPort
         );
-        $template = $this->parseTemplate($inputHostname, $documentRoot, $haystack, $this->getTemplate());
+
+        $template = $this->parseTemplate($inputHostname, $documentRoot, $haystack, $this->getTemplate($webServer));
 
         /**
          * Styles used by the output.
@@ -110,12 +113,21 @@ class CreateCommand extends Command
             ;
 
         $table->render();
+        //$output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . $template . '</>');
 
     }
 
-    protected function getTemplate()
+    protected function getTemplate($webServer)
     {
-        return file_get_contents(dirname(__DIR__) . '/../../conf/template.conf');
+        switch ($webServer)
+        {
+            case "Ngnix":
+                return file_get_contents(dirname(__DIR__) . '/../../conf/template_nginx');
+                break;
+            default:
+                return file_get_contents(dirname(__DIR__) . '/../../conf/template_apache');
+                break;
+        }
     }
 
     protected function getCredits()
@@ -125,7 +137,7 @@ class CreateCommand extends Command
 
     /**
      * How the template will look like
-     * $output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
+     * $output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
      *
      * unused table outputs. (for future reference only
      *
@@ -150,20 +162,18 @@ class CreateCommand extends Command
 
     public function parseTemplate($inputHostname, $documentRoot, $haystack, $template)
     {
-        /**
-         * Lets read the configuration file
-         */
-        require_once dirname(__DIR__) . "/../../conf/config.inc.php";
         $needle = array(
             '{IPADDRESS}',
             '{PORT}',
             '{DOMAIN}',
             '{ALIAS}',
             '{DOCUMENTROOT}',
-            '{FOLDER}'
+            '{FOLDER}',
+            '{SERVER}',
+            '{FCGIPORT}'
         );
 
-        return str_replace($needle, $haystack, $this->getTemplate());
+        return str_replace($needle, $haystack, $this->getTemplate($haystack['SERVER']));
     }
 
 }

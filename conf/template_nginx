@@ -1,0 +1,28 @@
+server {
+
+    listen {IPADDRESS}:{PORT} default_server;
+
+    server_name {DOMAIN} {DOMAIN}.{ALIAS} {ALIAS}.{DOMAIN};
+
+    root {DOCUMENTROOT}/{FOLDER}/web/;
+
+    error_page 404 errors/404.html;
+    access_log logs/{DOMAIN}.access.log;
+
+    index index.php index.html index.htm;
+
+    location ~* \.(jpg|jpeg|gif|css|png|js|ico|html)$ {
+        access_log off;
+        expires max;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_intercept_errors on;
+        fastcgi_pass   127.0.0.1:{FCGIPORT};
+    }
+
+    location ~ /\.ht {
+        deny  all;
+    }
+}

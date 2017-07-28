@@ -15,4 +15,15 @@ $documentRoot = "/var/www/vhosts";
  * Domain Alias (dev.$domain, $domain.dev for example, whatever you are going to use in your host file)
  */
 $alias = "dev";
+/**
+ * Web server
+ * only works with Apache and Ngnix for now
+ * comment one or the other, never leave both uncommented, the app will assume Apache as default.
+ */
+# $webServer = "Ngnix";
+$webServer = "Apache";
+/**
+ * If Ngnix is selected, choose your configured fcgi port
+ */
+$fcgiPort = 9000; // default port is 9000
 
