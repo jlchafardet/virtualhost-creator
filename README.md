@@ -14,17 +14,17 @@ First version state:
 ![First version of the app](http://i.imgur.com/kl64TxB.png)
 
 ## ToDo
-- [x] Create working console code
-- [x] Changed display output for the results.
+- [x] ~~Create working console code~~
+- [x] ~~Changed display output for the results.~~
 - [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
-- [x] Add configuration file (for distro specific information)
+- [x] ~~Add configuration file (for distro specific information)~~
 - [ ] Add configuration loading prioritization counter logic (in which order the virtualhosts will be loaded by apache)
-- [x] Add virtualhost template
-- [x] Parse virtualhost template and replace the variables with the input
+- [x] ~~Add virtualhost template~~
+- [x] ~~Parse virtualhost template and replace the variables with the input~~
 - [ ] Save apache **.conf** file with the parameters given by the user to the proper directory
 - [ ] Enable site (a2ensite) with apache if needed(ubuntu)
 - [ ] Restart apache
-- [x] Print to the screen the outcome of the process
+- [x] ~~Print to the screen the outcome of the process~~
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
 - [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
 
