@@ -119,7 +119,7 @@ class CreateCommand extends Command
             $documentRoot,
             $inputFolder
         );
-        $output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
+        //$output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
 
     }
 
