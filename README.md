@@ -43,15 +43,15 @@ At least is not in the plans for any of the inmediate future versions.
 
 From the console type:
 ```
-bin/virtualhost create hostname _**directory**_(optional)
+bin/virtualhost create hostname directory(optional)
 ```
-The script receives 2 parameters, one is mandatory **domain**, and the second is optional _**folder**_
+The script receives 2 parameters, one is mandatory **hostname**, and the second is optional _**folder**_
 
-bin/[virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) create domain folder
+bin/[virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) create hostname folder
 sample output (Includes a view of the parsed [Apache](http://httpd.apache.org/) configuration file):  
 ![With two parameters](http://i.imgur.com/xhCNKUW.png)
 
-If no second parameter is given, it will use the domain for the folder name.
+If no second parameter is given, it will use the hostname for the folder name.
 sample output:  
 ![Without second parameter](http://i.imgur.com/joJhBua.png)
 
