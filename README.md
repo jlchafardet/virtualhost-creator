@@ -25,6 +25,7 @@ First version state:
 - [ ] Enable site (a2ensite) with apache if needed(ubuntu)
 - [ ] Restart apache
 - [x] ~~Print to the screen the outcome of the process~~
+- [ ] Compile a .phar file and add it to **bin/release** folder
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
 - [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
 
