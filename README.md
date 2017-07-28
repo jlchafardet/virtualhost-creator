@@ -4,11 +4,12 @@
 by Jose Luis Chafardet Grimaldi  
 jose.chafardet@icloud.com
 ***
-A simple php script to create apache virtualhosts based on symfony 3 console component.
+A simple [PHP](http://php.net/) script to create [Apache](http://httpd.apache.org/) [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s based on [Symfony 3](http://symfony.com/) [Console Component](http://symfony.com/doc/current/components/console.html).
 
 ```
 Please be aware that this script is not meant for production environments! 
-I wrote it for development purposes (to speed up the process of configuring apache).
+I wrote it for development purposes.
+(to speed up the process of configuring [Apache)(http://httpd.apache.org/).
 ```
 First version state:
 ![First version of the app](http://i.imgur.com/kl64TxB.png)
@@ -16,15 +17,17 @@ First version state:
 ## ToDo
 - [x] ~~Create working console code~~
 - [x] ~~Changed display output for the results.~~
+- [ ] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
 - [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
 - [x] ~~Add configuration file (for distro specific information)~~
-- [ ] Add configuration loading prioritization counter logic (in which order the virtualhosts will be loaded by apache)
-- [x] ~~Add virtualhost template~~
-- [x] ~~Parse virtualhost template and replace the variables with the input~~
-- [ ] Save apache **.conf** file with the parameters given by the user to the proper directory
-- [ ] Enable site (a2ensite) with apache if needed(ubuntu)
-- [ ] Restart apache
+- [ ] Add counter to prioritize [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) loading (in which order the [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s will be loaded by [Apache](http://httpd.apache.org/))
+- [x] ~~Add [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template~~
+- [x] ~~Parse [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template and replace the variables with the input~~
+- [ ] Save [Apache](http://httpd.apache.org/) **.conf** file with the parameters given by the user to the proper directory
+- [ ] Enable site with [a2ensite](http://manpages.ubuntu.com/manpages/trusty/man8/a2ensite.8.html) with [Apache](http://httpd.apache.org/) if needed([Ubuntu](https://www.ubuntu.com/))
+- [ ] Restart [Apache](http://httpd.apache.org/)/nginx
 - [x] ~~Print to the screen the outcome of the process~~
+- [ ] Add variable in the configuration file to switch between Argument and Question based execution of the script.
 - [ ] Compile a .phar file and add it to **bin/release** folder
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
 - [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
@@ -38,10 +41,14 @@ At least is not in the plans for any of the inmediate future versions.
 
 ## Usage
 
+From the console type:
+```
+bin/virtualhost create hostname _**directory**_(optional)
+```
 The script receives 2 parameters, one is mandatory **domain**, and the second is optional _**folder**_
 
-bin/virtualhost create domain folder
-sample output (Includes a view of the parsed apache configuration file):  
+bin/[virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) create domain folder
+sample output (Includes a view of the parsed [Apache](http://httpd.apache.org/) configuration file):  
 ![With two parameters](http://i.imgur.com/xhCNKUW.png)
 
 If no second parameter is given, it will use the domain for the folder name.
