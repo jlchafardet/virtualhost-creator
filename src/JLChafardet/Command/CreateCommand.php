@@ -18,7 +18,7 @@ class CreateCommand extends Command
         $this
             ->setName('create')
             ->setDescription('Create virtualhost files for apache.')
-            ->addArgument('domain', InputArgument::REQUIRED, 'Domain name:')
+            ->addArgument('hostname', InputArgument::REQUIRED, 'Hostname:')
             ->addArgument('folder', InputArgument::OPTIONAL, 'Folder name (optional):')
             ;
     }
@@ -30,10 +30,8 @@ class CreateCommand extends Command
          *
          */
         $rs = getrusage();
-        function runtime($ru, $rus, $index) {
-            return ($ru["ru_$index.tv_sec"]*1000 + intval($ru["ru_$index.tv_usec"]/1000))
-                -  ($rus["ru_$index.tv_sec"]*1000 + intval($rus["ru_$index.tv_usec"]/1000));
-        }
+        $this->timer();
+        $ru = getrusage();
 
         /**
          * Lets read the configuration file
@@ -43,41 +41,30 @@ class CreateCommand extends Command
         /**
          * get the input from the user.
          */
-        $inputDomain = trim(strtolower($input->getArgument('domain')));
-        $inputFolder = trim(strtolower($input->getArgument('folder')));
+        $inputHostname = $this->normalize($input->getArgument('hostname'));
+        $inputFolder = $this->normalize($input->getArgument('folder'));
 
         /**
          * if the folder value is left empty, uses the domain as name for the folder.
          */
         if (empty($inputFolder))
         {
-            $inputFolder = $inputDomain;
+            $inputFolder = $inputHostname;
         }
 
         /**
-         * Logic goes here! sucky single function crap for now.
+         * Logic goes here!
          *
-         *
-         * Begin parsing template and replacing variables
          */
-        $needle = array(
-            '{IPADDRESS}',
-            '{PORT}',
-            '{DOMAIN}',
-            '{ALIAS}',
-            '{DOCUMENTROOT}',
-            '{FOLDER}'
-        );
         $haystack = array (
             $ipAddress,
             $port,
-            $inputDomain,
+            $inputHostname,
             $alias,
             $documentRoot,
             $inputFolder
         );
-
-        $template = str_replace($needle, $haystack, $this->getTemplate());
+        $template = $this->parseTemplate($inputHostname, $documentRoot, $haystack, $this->getTemplate());
 
         /**
          * Styles used by the output.
@@ -95,8 +82,8 @@ class CreateCommand extends Command
         /**
          * Now lets try a table and decide which is better
          */
+
         $table = new Table($output);
-        $ru = getrusage();
         $table
             ->setHeaders(
                 array(
@@ -104,7 +91,7 @@ class CreateCommand extends Command
                     array(
                     '<info>IP Address</>',
                     '<info>Port</>',
-                    '<info>Domain</>',
+                    '<info>Hostname</>',
                     '<info>Folder</>',
                     '<info>Status</>')))
             ->setRows(
@@ -112,7 +99,7 @@ class CreateCommand extends Command
                     [
                         '<domain>'.$ipAddress.'</>',
                         '<domain>'.$port.'</>',
-                        '<domain>'.$inputDomain.'</>',
+                        '<domain>'.$inputHostname.'</>',
                         '<folder>'.$documentRoot.'/'.$inputFolder.'</folder>',
                         "<domain>OK</>/<warning>ERROR</warning>"
                     ],
@@ -123,7 +110,6 @@ class CreateCommand extends Command
             ;
 
         $table->render();
-        //$output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
 
     }
 
@@ -138,6 +124,9 @@ class CreateCommand extends Command
     }
 
     /**
+     * How the template will look like
+     * $output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
+     *
      * unused table outputs. (for future reference only
      *
      * $table->setStyle('borderless');
@@ -145,5 +134,36 @@ class CreateCommand extends Command
      *
      * This values go just "above" the table render command.
      */
+    public function timer ()
+    {
+        function runtime($ru, $rus, $index) {
+            return ($ru["ru_$index.tv_sec"]*1000 + intval($ru["ru_$index.tv_usec"]/1000))
+                -  ($rus["ru_$index.tv_sec"]*1000 + intval($rus["ru_$index.tv_usec"]/1000));
+        }
+    }
+
+    public function normalize($str)
+    {
+
+        return trim(strtolower(preg_replace('/[^a-zA-Z0-9_.]/', '_', $str)));
+    }
+
+    public function parseTemplate($inputHostname, $documentRoot, $haystack, $template)
+    {
+        /**
+         * Lets read the configuration file
+         */
+        require_once dirname(__DIR__) . "/../../conf/config.inc.php";
+        $needle = array(
+            '{IPADDRESS}',
+            '{PORT}',
+            '{DOMAIN}',
+            '{ALIAS}',
+            '{DOCUMENTROOT}',
+            '{FOLDER}'
+        );
+
+        return str_replace($needle, $haystack, $this->getTemplate());
+    }
 
 }
