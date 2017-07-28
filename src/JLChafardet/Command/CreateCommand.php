@@ -38,7 +38,7 @@ class CreateCommand extends Command
         /**
          * Lets read the configuration file
          */
-        require dirname(__DIR__) . "/../../conf/config.inc.php";
+        require_once dirname(__DIR__) . "/../../conf/config.inc.php";
 
         /**
          * get the input from the user.
@@ -56,7 +56,28 @@ class CreateCommand extends Command
 
         /**
          * Logic goes here! sucky single function crap for now.
+         *
+         *
+         * Begin parsing template and replacing variables
          */
+        $needle = array(
+            '{IPADDRESS}',
+            '{PORT}',
+            '{DOMAIN}',
+            '{ALIAS}',
+            '{DOCUMENTROOT}',
+            '{FOLDER}'
+        );
+        $haystack = array (
+            $ipAddress,
+            $port,
+            $inputDomain,
+            $alias,
+            $documentRoot,
+            $inputFolder
+        );
+
+        $template = str_replace($needle, $haystack, $this->getTemplate());
 
         /**
          * Styles used by the output.
@@ -102,23 +123,6 @@ class CreateCommand extends Command
             ;
 
         $table->render();
-        $output->writeln(PHP_EOL);
-        $needle = array(
-            '{IPADDRESS}',
-            '{PORT}',
-            '{DOMAIN}',
-            '{ALIAS}',
-            '{DOCUMENTROOT}',
-            '{FOLDER}'
-        );
-        $haystack = array (
-            $ipAddress,
-            $port,
-            $inputDomain,
-            $alias,
-            $documentRoot,
-            $inputFolder
-        );
         //$output->writeln('Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
 
     }
