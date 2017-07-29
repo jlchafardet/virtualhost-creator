@@ -107,7 +107,9 @@ class CreateCommand extends Command
                         "<domain>OK</>/<warning>ERROR</warning>"
                     ],
                     new TableSeparator(),
-                    array(new TableCell('<info>Process completed in <warning>' . runtime($ru, $rs, "utime").'</> ms</>', array('colspan' => '5'))),
+                    array(new TableCell('<info>Process completed in <warning>'
+                        . runtime($ru, $rs, "utime")
+                        .'</> ms</>', array('colspan' => '5'))),
                     array(new TableCell($this->getCredits(), array('colspan' => '5'))),
                 ))
             ;
