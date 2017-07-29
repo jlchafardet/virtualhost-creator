@@ -137,17 +137,6 @@ class CreateCommand extends Command
         return ("<info>Thank you for using virtualhost-creator by <folder>JLChafardet.</></>");
     }
 
-    /**
-     * How the template will look like
-     * $output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
-     *
-     * unused table outputs. (for future reference only
-     *
-     * $table->setStyle('borderless');
-     * $table->setStyle('compact');
-     *
-     * This values go just "above" the table render command.
-     */
     public function timer ()
     {
         function runtime($ru, $rus, $index) {
@@ -178,4 +167,16 @@ class CreateCommand extends Command
         return str_replace($needle, $haystack, $this->getTemplate($haystack['SERVER']));
     }
 
+
+    /**
+     * How the template will look like
+     * $output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . str_replace($needle, $haystack, $this->getTemplate()) . '</>');
+     *
+     * unused table outputs. (for future reference only
+     *
+     * $table->setStyle('borderless');
+     * $table->setStyle('compact');
+     *
+     * This values go just "above" the table render command.
+     */
 }
