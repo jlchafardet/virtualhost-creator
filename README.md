@@ -20,13 +20,13 @@ First version state:
 
 - [ ] Add support for [CentOS](https://www.centos.org/) and [Ubuntu](https://www.ubuntu.com/) based distributions
 - [x] ~~Add configuration file (for distro specific information)~~
-- [ ] Add counter to prioritize [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) loading (in which order the [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s will be loaded by [Apache](http://httpd.apache.org/))
+- [ ] Add counter to prioritize [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) loading (in which order the [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s will be loaded by [Apache](http://httpd.apache.org/) / [nginx](https://nginx.org/en/))
 - [x] ~~Add [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template~~
 - [x] ~~Parse [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template and replace the variables with the input~~
-- [ ] Save [Apache](http://httpd.apache.org/) **.conf** file with the parameters given by the user to the proper directory
+- [ ] Save [Apache](http://httpd.apache.org/) / [nginx](https://nginx.org/en/) **.conf** file with the parameters given by the user to the proper directory
 - [ ] Enable site with [a2ensite](http://manpages.ubuntu.com/manpages/trusty/man8/a2ensite.8.html) with [Apache](http://httpd.apache.org/) if needed([Ubuntu](https://www.ubuntu.com/))
 - [ ] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
-- [ ] Restart [Apache](http://httpd.apache.org/)/nginx
+- [ ] Restart [Apache](http://httpd.apache.org/)/ [nginx](https://nginx.org/en/)
 - [x] ~~Print to the screen the outcome of the process~~
 - [ ] Add variable in the configuration file to switch between Argument and Question based execution of the script.
 - [ ] Compile a .phar file and add it to **bin/release** folder
@@ -49,7 +49,7 @@ bin/virtualhost create hostname directory(optional)
 The script receives 2 parameters, one is mandatory **hostname**, and the second is optional _**folder**_
 
 bin/[virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) create hostname folder
-sample output (Includes a view of the parsed [Apache](http://httpd.apache.org/) configuration file):  
+sample output (Includes a view of the parsed [Apache](http://httpd.apache.org/) / [nginx](https://nginx.org/en/) configuration file):  
 ![With two parameters](http://i.imgur.com/xhCNKUW.png)
 
 If no second parameter is given, it will use the hostname for the folder name.
