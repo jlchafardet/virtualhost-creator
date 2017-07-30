@@ -13,11 +13,12 @@ use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 
 class CreateCommand extends Command
 {
+
     protected function configure()
     {
         $this
             ->setName('create')
-            ->setDescription('Create virtualhost files for apache.')
+            ->setDescription('Create virtualhost files for Apache/Nginx.')
             ->addArgument('hostname', InputArgument::REQUIRED, 'Hostname:')
             ->addArgument('folder', InputArgument::OPTIONAL, 'Folder name (optional):')
             ;
@@ -25,14 +26,6 @@ class CreateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        /**
-         * Start measuring running time
-         *
-         */
-        $rs = getrusage();
-        $this->timer();
-        $ru = getrusage();
-
         /**
          * Lets read the configuration file
          */
@@ -53,8 +46,7 @@ class CreateCommand extends Command
         }
 
         /**
-         * Logic goes here!
-         *
+         * Values to use during the runtime of the app.
          */
         $haystack = array (
             'IP' => $ipAddress,
@@ -67,6 +59,9 @@ class CreateCommand extends Command
             'FCGIPORT' => $fcgiPort
         );
 
+        /**
+         * get the template and parse it with its respective values.
+         */
         $template = $this->parseTemplate($inputHostname, $documentRoot, $haystack, $this->getTemplate($webServer));
 
         /**
@@ -107,9 +102,6 @@ class CreateCommand extends Command
                         "<domain>OK</>/<warning>ERROR</warning>"
                     ],
                     new TableSeparator(),
-                    array(new TableCell('<info>Process completed in <warning>'
-                        . runtime($ru, $rs, "utime")
-                        .'</> ms</>', array('colspan' => '5'))),
                     array(new TableCell($this->getCredits(), array('colspan' => '5'))),
                 ))
             ;
@@ -137,14 +129,6 @@ class CreateCommand extends Command
         return ("<info>Thank you for using virtualhost-creator by <folder>JLChafardet.</></>");
     }
 
-    public function timer ()
-    {
-        function runtime($ru, $rus, $index) {
-            return ($ru["ru_$index.tv_sec"]*1000 + intval($ru["ru_$index.tv_usec"]/1000))
-                -  ($rus["ru_$index.tv_sec"]*1000 + intval($rus["ru_$index.tv_usec"]/1000));
-        }
-    }
-
     public function normalize($str)
     {
 
@@ -166,7 +150,6 @@ class CreateCommand extends Command
 
         return str_replace($needle, $haystack, $this->getTemplate($haystack['SERVER']));
     }
-
 
     /**
      * How the template will look like
