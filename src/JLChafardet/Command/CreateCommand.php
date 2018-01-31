@@ -107,7 +107,7 @@ class CreateCommand extends Command
             ;
 
         $table->render();
-        //$output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . $template . '</>');
+        $output->writeln( PHP_EOL . PHP_EOL . 'Template looks like:' . PHP_EOL . PHP_EOL . '<info>' . $template . '</>');
 
     }
 

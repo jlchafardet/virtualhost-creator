@@ -27,3 +27,10 @@ $webServer = "Apache";
  */
 $fcgiPort = 9000; // default port is 9000
 
+/**
+ * Frameworks:
+ *
+ * For now symfony 3 and 4
+ */
+$framework = 4;
+
