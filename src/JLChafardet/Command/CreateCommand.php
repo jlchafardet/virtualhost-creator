@@ -21,6 +21,7 @@ class CreateCommand extends Command
             ->setDescription('Create virtualhost files for Apache/Nginx.')
             ->addArgument('hostname', InputArgument::REQUIRED, 'Hostname:')
             ->addArgument('folder', InputArgument::OPTIONAL, 'Folder name (optional):')
+            ->addArgument('framework', InputArgument::OPTIONAL, 'Framework to use(if any, optional):')
             ;
     }
 
@@ -35,7 +36,14 @@ class CreateCommand extends Command
          * get the input from the user.
          */
         $inputHostname = $this->normalize($input->getArgument('hostname'));
-        $inputFolder = $this->normalize($input->getArgument('folder'));
+        if(!empty($input->getArgument('folder')))
+        {
+            $inputFolder = $this->normalize($input->getArgument('folder'));
+        }
+        if(!empty($input->getArgument('framework')))
+        {
+            $framework = $this->normalize($input->getArgument('framework'));
+        }
 
         /**
          * if the folder value is left empty, uses the domain as name for the folder.
@@ -150,6 +158,20 @@ class CreateCommand extends Command
 
         return str_replace($needle, $haystack, $this->getTemplate($haystack['SERVER']));
     }
+
+    public function getUserIpAddr(){
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            //ip from share internet
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            //ip pass from proxy
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
+
 
     /**
      * How the template will look like

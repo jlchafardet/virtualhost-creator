@@ -14,7 +14,7 @@ $documentRoot = "/var/www/vhosts";
 /**
  * Domain Alias (dev.$domain, $domain.dev for example, whatever you are going to use in your host file)
  */
-$alias = "dev";
+$alias = "test";
 /**
  * Web server
  * only works with Apache and Ngnix for now
