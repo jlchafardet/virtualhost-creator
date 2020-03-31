@@ -11,7 +11,7 @@ Please be aware that this script is not meant for production environments!
 I wrote it for development purposes.
 (to speed up the process of configuring Apache).
 ```
-(http://i.imgur.com/xhCNKUW.png)
+![Screenshot](http://i.imgur.com/xhCNKUW.png)
 
 ## ToDo
 - [x] ~~Create working console code~~
