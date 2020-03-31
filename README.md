@@ -9,11 +9,8 @@ A simple [PHP](http://php.net/) script to create [Apache](http://httpd.apache.or
 ```
 Please be aware that this script is not meant for production environments! 
 I wrote it for development purposes.
-(to speed up the process of configuring Apache.
+(to speed up the process of configuring Apache).
 ```
-First version state:
-![First version of the app](http://i.imgur.com/kl64TxB.png)
-
 ## ToDo
 - [x] ~~Create working console code~~
 - [x] ~~Changed display output for the results.~~
