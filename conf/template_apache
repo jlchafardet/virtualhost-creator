@@ -4,8 +4,9 @@
 
 	DocumentRoot {DOCUMENTROOT}/{FOLDER}/public/
 	<Directory {DOCUMENTROOT}/{FOLDER}/public/>
+		Options Indexes FollowSymLinks
 		AllowOverride All
-    </Directory>
+	</Directory>
 
 	<Directory {DOCUMENTROOT}/{FOLDER}/public>
 		Options Options +Indexes +Includes +FollowSymLinks +MultiViews
@@ -15,8 +16,8 @@
         </IfModule>
 	</Directory>
 
-XSendFile on
-XSendFilePath {DOCUMENTROOT}/{FOLDER}/uploads
-XSendFilePath {DOCUMENTROOT}/{FOLDER}/public
+	XSendFile on
+	XSendFilePath {DOCUMENTROOT}/{FOLDER}/uploads
+	XSendFilePath {DOCUMENTROOT}/{FOLDER}/public
 
 </VirtualHost>

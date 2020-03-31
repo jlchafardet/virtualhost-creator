@@ -4,7 +4,7 @@
 by Jose Luis Chafardet Grimaldi  
 jose.chafardet@icloud.com
 ***
-A simple [PHP](http://php.net/) script to create [Apache](http://httpd.apache.org/) [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s based on [Symfony 3](http://symfony.com/) [Console Component](http://symfony.com/doc/current/components/console.html).
+A simple [PHP](http://php.net/) script to create [Apache](http://httpd.apache.org/) [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost)s based on [Symfony 4](http://symfony.com/) [Console Component](http://symfony.com/doc/current/components/console.html).
 
 ```
 Please be aware that this script is not meant for production environments! 
@@ -30,6 +30,8 @@ First version state:
 - [x] ~~Print to the screen the outcome of the process~~
 - [ ] Add variable in the configuration file to switch between Argument and Question based execution of the script.
 - [ ] Compile a .phar file and add it to **bin/release** folder
+- [x] ~~Add support for framework parameter (symfony, laravel only for now)~~
+- [ ] Add ability to determine "current server" IP address as to remove it from manually configuring it in the config file
 - [ ] Finish the [CONTRIBUTING.md](CONTRIBUTING.md) file
 - [ ] Finish the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file
 
