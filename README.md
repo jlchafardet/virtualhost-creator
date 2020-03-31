@@ -11,6 +11,8 @@ Please be aware that this script is not meant for production environments!
 I wrote it for development purposes.
 (to speed up the process of configuring Apache).
 ```
+(http://i.imgur.com/xhCNKUW.png)
+
 ## ToDo
 - [x] ~~Create working console code~~
 - [x] ~~Changed display output for the results.~~
@@ -22,7 +24,7 @@ I wrote it for development purposes.
 - [x] ~~Parse [virtualhost](http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) template and replace the variables with the input~~
 - [ ] Save [Apache](http://httpd.apache.org/) / [nginx](https://nginx.org/en/) **.conf** file with the parameters given by the user to the proper directory
 - [ ] Enable site with [a2ensite](http://manpages.ubuntu.com/manpages/trusty/man8/a2ensite.8.html) with [Apache](http://httpd.apache.org/) if needed([Ubuntu](https://www.ubuntu.com/))
-- [ ] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
+- [x] Add support for [nginx](https://nginx.org/en/) - _request by a good friend_
 - [ ] Restart [Apache](http://httpd.apache.org/)/ [nginx](https://nginx.org/en/)
 - [x] ~~Print to the screen the outcome of the process~~
 - [ ] Add variable in the configuration file to switch between Argument and Question based execution of the script.
