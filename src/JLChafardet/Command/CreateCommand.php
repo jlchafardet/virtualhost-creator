@@ -48,7 +48,7 @@ class CreateCommand extends Command
         /**
          * Values to use during the runtime of the app.
          */
-        $haystack = array (
+         $haystack = array (
             'IP' => $ipAddress,
             'PORT' => $port,
             'HOSTNAME' => $inputHostname,
@@ -56,7 +56,8 @@ class CreateCommand extends Command
             'DOCUMENTROOT' => $documentRoot,
             'FOLDER' => $inputFolder,
             'SERVER' => $webServer,
-            'FCGIPORT' => $fcgiPort
+            'FCGIPORT' => $fcgiPort,
+            'OPERATINGSYSTEM' => $operatingSystem
         );
 
         /**
@@ -119,7 +120,8 @@ class CreateCommand extends Command
                 return file_get_contents(dirname(__DIR__) . '/../../conf/template_nginx');
                 break;
             default:
-                return file_get_contents(dirname(__DIR__) . '/../../conf/template_apache');
+                    return file_get_contents(dirname(__DIR__) . '/../../conf/template_apache_w');
+                    #return file_get_contents(dirname(__DIR__) . '/../../conf/template_apache');
                 break;
         }
     }

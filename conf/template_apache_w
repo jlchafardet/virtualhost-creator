@@ -1,0 +1,20 @@
+<VirtualHost {IPADDRESS}:{PORT}>
+	ServerName {DOMAIN}
+	ServerAlias {DOMAIN}.{ALIAS}
+
+	DocumentRoot "{DOCUMENTROOT}/{FOLDER}/public/"
+
+	<Directory "{DOCUMENTROOT}/{FOLDER}/public">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require all granted
+        <IfModule mod_php5.c>
+                php_admin_flag engine on
+        </IfModule>
+	</Directory>
+
+XSendFile on
+XSendFilePath "{DOCUMENTROOT}/{FOLDER}/uploads"
+XSendFilePath "{DOCUMENTROOT}/{FOLDER}/public"
+
+</VirtualHost>

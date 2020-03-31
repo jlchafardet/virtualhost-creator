@@ -1,7 +1,6 @@
 <VirtualHost {IPADDRESS}:{PORT}>
 	ServerName {DOMAIN}
 	ServerAlias {DOMAIN}.{ALIAS}
-	ServerAlias {ALIAS}.{DOMAIN}
 
 	DocumentRoot {DOCUMENTROOT}/{FOLDER}/public/
 	<Directory {DOCUMENTROOT}/{FOLDER}/public/>
@@ -9,7 +8,8 @@
     </Directory>
 
 	<Directory {DOCUMENTROOT}/{FOLDER}/public>
-		Options -Includes +ExecCGI
+		Options Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
         <IfModule mod_php5.c>
                 php_admin_flag engine on
         </IfModule>
